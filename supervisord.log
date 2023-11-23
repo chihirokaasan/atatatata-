@@ -1,0 +1,52 @@
+2023-11-21 12:50:21,776 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-11-21 12:50:21,781 INFO supervisord started with pid 1
+2023-11-21 12:50:22,790 INFO spawned: 'nginx' with pid 15
+2023-11-21 12:50:22,798 INFO spawned: 'php-fpm' with pid 17
+2023-11-21 12:50:24,304 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 12:50:24,305 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 12:52:52,972 WARN received SIGTERM indicating exit request
+2023-11-21 12:52:52,973 INFO waiting for nginx, php-fpm to die
+2023-11-21 12:52:53,043 INFO stopped: php-fpm (exit status 0)
+2023-11-21 12:52:53,060 INFO stopped: nginx (exit status 0)
+2023-11-21 12:55:51,894 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-11-21 12:55:51,900 INFO supervisord started with pid 1
+2023-11-21 12:55:52,912 INFO spawned: 'nginx' with pid 15
+2023-11-21 12:55:52,920 INFO spawned: 'php-fpm' with pid 17
+2023-11-21 12:55:54,155 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 12:55:54,156 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 12:56:58,997 WARN received SIGTERM indicating exit request
+2023-11-21 12:56:59,000 INFO waiting for nginx, php-fpm to die
+2023-11-21 12:56:59,073 INFO stopped: php-fpm (exit status 0)
+2023-11-21 12:56:59,098 INFO stopped: nginx (exit status 0)
+2023-11-21 12:57:06,317 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-11-21 12:57:06,323 INFO supervisord started with pid 1
+2023-11-21 12:57:07,329 INFO spawned: 'nginx' with pid 15
+2023-11-21 12:57:07,332 INFO spawned: 'php-fpm' with pid 17
+2023-11-21 12:57:08,601 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 12:57:08,602 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-21 13:03:42,061 INFO reaped unknown pid 135
+2023-11-21 13:07:21,112 WARN received SIGTERM indicating exit request
+2023-11-21 13:07:21,116 INFO waiting for nginx, php-fpm to die
+2023-11-21 13:07:21,192 INFO stopped: php-fpm (exit status 0)
+2023-11-21 13:07:21,230 INFO stopped: nginx (exit status 0)
+2023-11-23 10:22:24,792 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-11-23 10:22:24,812 INFO supervisord started with pid 1
+2023-11-23 10:22:25,821 INFO spawned: 'nginx' with pid 15
+2023-11-23 10:22:25,826 INFO spawned: 'php-fpm' with pid 17
+2023-11-23 10:22:27,239 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-23 10:22:27,242 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-11-23 10:31:56,279 INFO reaped unknown pid 148
+2023-11-23 10:34:31,718 INFO reaped unknown pid 266
+2023-11-23 10:48:00,419 INFO reaped unknown pid 192
+2023-11-23 10:57:57,640 INFO reaped unknown pid 333
+2023-11-23 13:44:05,560 INFO reaped unknown pid 396
+2023-11-23 13:45:54,181 INFO reaped unknown pid 467
+2023-11-23 13:47:20,680 INFO reaped unknown pid 505
+2023-11-23 13:48:36,828 INFO reaped unknown pid 543
+2023-11-23 13:51:39,366 INFO reaped unknown pid 623
+2023-11-23 13:51:52,382 INFO reaped unknown pid 664
+2023-11-23 13:58:59,225 INFO reaped unknown pid 705
+2023-11-23 13:59:11,745 INFO reaped unknown pid 743
+2023-11-23 16:06:34,121 INFO reaped unknown pid 784
+2023-11-23 16:42:59,114 INFO reaped unknown pid 1056
+2023-11-23 16:45:38,641 INFO reaped unknown pid 1200

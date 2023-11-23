@@ -21,3 +21,11 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+#docker
+.docker
+Dockerfile
+docker-compose.yml
+
+.idea
+database/
