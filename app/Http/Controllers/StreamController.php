@@ -14,8 +14,6 @@ class StreamController extends Controller
         return view('stream.index');
     }
 
-// App\Http\Controllers\StreamController
-
     public function click(Request $request)
     {
         $playerName = $request->input('player');

@@ -9,9 +9,6 @@ window.Echo = new Echo({
     key: import.meta.env.VITE_PUSHER_APP_KEY,
     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'mt1',
     wsHost: import.meta.env.VITE_PUSHER_HOST ? import.meta.env.VITE_PUSHER_HOST : `ws-${import.meta.env.VITE_PUSHER_APP_CLUSTER}.pusher.com`,
-    // wsPortとwssPortの設定は削除するか、適切な値を設定
-    // wsPort: import.meta.env.VITE_PUSHER_PORT ?? 80,
-    // wssPort: import.meta.env.VITE_PUSHER_PORT ?? 443,
     forceTLS: import.meta.env.VITE_PUSHER_APP_FORCE_TLS ?? false, // SSLを使用していないためfalseに設定
     enabledTransports: ['ws', 'wss'], // WebSocketのみを使用する
     disabledTransports: ['sockjs'], // SockJSは無効にする
@@ -24,11 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const playerInput = document.getElementById('player'); // プレイヤー名を入力するフォーム
     const playerScoreDiv = document.getElementById('player-score'); // スコアを表示するDIV
     const winnerDiv = document.getElementById('winner');
+    const maxCount = 20;
+    const progressBarArea = document.getElementById('progress-bar-area');
 
     let scores = {}; // 各プレイヤーのスコアを保持するオブジェクト
     let gameEnded = false; // ゲームが終了したかどうかのフラグ
 
+
     streamButton.addEventListener('click', function () {
+
         if (gameEnded) return;
         const playerName = playerInput.value;
         if (!playerName) {
@@ -68,15 +69,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // スコア表示の更新
             playerScoreDiv.innerHTML = '';
-            for (let player in scores) {
+            Object.keys(scores).forEach((player, index) => {
+                const progressBar = document.getElementById(`progressBar${player}`);
+                if (!progressBar) {
+                    progressBarArea.innerHTML += `
+               <div class="text-4xl">${player}</div> <div class="w-full sm:max-w-md mx-auto bg-gray-200 text-white h-full flex items-center rounded-full mb-3">
+       
+        <div id="progressBar${player}" class="absolut bg-[#F59E0B] h-[8px] rounded-full"></div>
+    </div>
+                `;
+                }
+                console.log(progressBarArea);
+
                 playerScoreDiv.innerHTML += `<p>${player}: ${scores[player]} アタタ</p>`;
-            }
+                updateProgressBar(scores[player], player);
+            });
 
             // 勝者判定
-            if (scores[player] >= 10) {
+            if (scores[player] >= maxCount) {
                 winnerDiv.innerHTML = `<p class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white text-6xl px-4 py-2 z-50 whitespace-nowrap">勝利者: ${player}</p>`;
                 gameEnded = true; // ゲームを終了
             }
         });
+
+
+    /**
+     * Updates the progress bar based on the click count.
+     * @param {number} count - The current click count.
+     * @param {string} player - The player identifier.
+     * @returns {void}
+     */
+    const updateProgressBar = (count, player) => {
+        const widthPercentage = (count / maxCount) * 100;
+        const progressBar = document.getElementById(`progressBar${player}`);
+        if (progressBar) {
+            progressBar.style.width = widthPercentage + '%';
+        } else {
+            console.log(`Element with id progressBar${player} not found`);
+        }
+    }
 
 });

@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-
+import { loadEnv } from 'vite';
+const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 export default defineConfig({
     server: {
         host: true,
         hmr: {
-            host: '169.254.116.37',
+            host: env.APP_ENV || 'localhost',
         },
         watch: {
             usePolling: true,
